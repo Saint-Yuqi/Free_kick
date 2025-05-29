@@ -1,0 +1,10 @@
+I think one simple way to reduce the number of interaction tests between rays and triangles, is to only do interaction tests with triangles
+where the normal of the triangle points in the opposite [0, 90°[ direction of the ray.
+Because if the normal points in the same direction of the ray, then the ray will never hit the "visible" side of the triangle.
+This can be simply done with a dot product between the normalised ray and normalised normal of the triangle and if the dot product is bigger or equal than zero,
+ignore the interaction.
+
+But one needs to be careful with glass objects!!!!! 
+This approach would ignore triangles which are on the backside and thus no refraction would happen.
+
+I think this setting can be configured as a hyperparameter and whether to ignore same directed normals should be configurable by object.

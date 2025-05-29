@@ -1,0 +1,342 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ns/call  ns/call  name    
+ 70.85      4.01     4.01 128627109    31.18    31.18  Triangle::solveRoot(Ray)
+ 15.90      4.91     0.90 130071143     6.92     6.92  Triangle::getSurfaceNormal(Vector&)
+ 13.25      5.66     0.75                             stbi_write_tga_core(stbi__write_context*, int, int, int, void*)
+  0.00      5.66     0.00    81720     0.00     0.00  Sphere::getSurfaceNormal(Vector&)
+  0.00      5.66     0.00    79207     0.00     0.00  Sphere::solveRoot(Ray)
+  0.00      5.66     0.00    41699     0.00     0.00  stbiw__encode_png_line(unsigned char*, int, int, int, int, int, int, signed char*)
+  0.00      5.66     0.00    19325     0.00     0.00  Plane::getSurfaceNormal(Vector&)
+  0.00      5.66     0.00    18699     0.00     0.00  Plane::solveRoot(Ray)
+  0.00      5.66     0.00    16031     0.00     0.00  Triangle::getMaterial() const
+  0.00      5.66     0.00     9690     0.00     0.00  Glassy::getShininessCoefficient() const
+  0.00      5.66     0.00     9548     0.00     0.00  Glassy::getSpecularCoefficient() const
+  0.00      5.66     0.00     9407     0.00     0.00  Glassy::getRefractionIndex() const
+  0.00      5.66     0.00     9308     0.00     0.00  Glassy::getDiffusionCoefficient() const
+  0.00      5.66     0.00     9042     0.00     0.00  Glassy::getAmbientCoefficient() const
+  0.00      5.66     0.00     8876     0.00     0.00  Glassy::getObjectColor() const
+  0.00      5.66     0.00     4704     0.00     0.00  stbiw__jpg_DCT(float*, float*, float*, float*, float*, float*, float*, float*)
+  0.00      5.66     0.00     2997     0.00     0.00  stbi__stdio_write(void*, void*, int)
+  0.00      5.66     0.00     2652     0.00     0.00  Plane::getMaterial() const
+  0.00      5.66     0.00     1969     0.00     0.00  Sphere::getMaterial() const
+  0.00      5.66     0.00     1773     0.00     0.00  Metallic::getShininessCoefficient() const
+  0.00      5.66     0.00     1733     0.00     0.00  Metallic::getSpecularCoefficient() const
+  0.00      5.66     0.00     1727     0.00     0.00  Metallic::getRefractionIndex() const
+  0.00      5.66     0.00     1721     0.00     0.00  Metallic::getDiffusionCoefficient() const
+  0.00      5.66     0.00     1690     0.00     0.00  Metallic::getAmbientCoefficient() const
+  0.00      5.66     0.00     1678     0.00     0.00  Metallic::getObjectColor() const
+  0.00      5.66     0.00       98     0.00     0.00  stbiw__jpg_processDU(stbi__write_context*, int*, int*, float*, int, float*, int, unsigned short const (*) [2], unsigned short const (*) [2]) [clone .constprop.1]
+  0.00      5.66     0.00       14     0.00     0.00  void std::vector<Shape*, std::allocator<Shape*> >::_M_realloc_insert<Shape*>(__gnu_cxx::__normal_iterator<Shape**, std::vector<Shape*, std::allocator<Shape*> > >, Shape*&&)
+  0.00      5.66     0.00       13     0.00     0.00  void std::vector<Vector, std::allocator<Vector> >::_M_realloc_insert<Vector>(__gnu_cxx::__normal_iterator<Vector*, std::vector<Vector, std::allocator<Vector> > >, Vector&&)
+  0.00      5.66     0.00        4     0.00     0.00  Sphere::~Sphere()
+  0.00      5.66     0.00        4     0.00     0.00  std::vector<Sphere*, std::allocator<Sphere*> >::push_back(Sphere* const&)
+  0.00      5.66     0.00        3     0.00     0.00  rotate(Vector, Vector, double)
+  0.00      5.66     0.00        3     0.00     0.00  void std::vector<Sphere*, std::allocator<Sphere*> >::_M_realloc_insert<Sphere* const&>(__gnu_cxx::__normal_iterator<Sphere**, std::vector<Sphere*, std::allocator<Sphere*> > >, Sphere* const&)
+  0.00      5.66     0.00        1     0.00     0.00  loadOBJ(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Material*)
+  0.00      5.66     0.00        1     0.00     0.00  stbiw__jpg_processDU(stbi__write_context*, int*, int*, float*, int, float*, int, unsigned short const (*) [2], unsigned short const (*) [2]) [clone .constprop.0]
+  0.00      5.66     0.00        1     0.00     0.00  Screen::writeToJPG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)
+  0.00      5.66     0.00        1     0.00     0.00  Screen::Screen(Vector, int, int)
+  0.00      5.66     0.00        1     0.00     0.00  std::vector<Pixel, std::allocator<Pixel> >::~vector()
+  0.00      5.66     0.00        1     0.00     0.00  std::vector<Shape*, std::allocator<Shape*> >::~vector()
+  0.00      5.66     0.00        1     0.00     0.00  std::vector<Sphere*, std::allocator<Sphere*> >::~vector()
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2024 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 4 byte(s) for 0.18% of 5.66 seconds
+
+index % time    self  children    called     name
+                               14757             stbi_write_tga_core(stbi__write_context*, int, int, int, void*) [1]
+[1]    100.0    0.75    4.91       0+14757   stbi_write_tga_core(stbi__write_context*, int, int, int, void*) [1]
+                4.01    0.00 128627109/128627109     Triangle::solveRoot(Ray) [2]
+                0.90    0.00 130071143/130071143     Triangle::getSurfaceNormal(Vector&) [3]
+                0.00    0.00   81720/81720       Sphere::getSurfaceNormal(Vector&) [24]
+                0.00    0.00   79207/79207       Sphere::solveRoot(Ray) [25]
+                0.00    0.00   19325/19325       Plane::getSurfaceNormal(Vector&) [27]
+                0.00    0.00   18699/18699       Plane::solveRoot(Ray) [28]
+                0.00    0.00   16031/16031       Triangle::getMaterial() const [29]
+                0.00    0.00    9690/9690        Glassy::getShininessCoefficient() const [30]
+                0.00    0.00    9548/9548        Glassy::getSpecularCoefficient() const [31]
+                0.00    0.00    9407/9407        Glassy::getRefractionIndex() const [32]
+                0.00    0.00    9308/9308        Glassy::getDiffusionCoefficient() const [33]
+                0.00    0.00    9042/9042        Glassy::getAmbientCoefficient() const [34]
+                0.00    0.00    8876/8876        Glassy::getObjectColor() const [35]
+                0.00    0.00    3778/41699       stbiw__encode_png_line(unsigned char*, int, int, int, int, int, int, signed char*) [26]
+                0.00    0.00    2652/2652        Plane::getMaterial() const [38]
+                0.00    0.00    1969/1969        Sphere::getMaterial() const [39]
+                0.00    0.00    1773/1773        Metallic::getShininessCoefficient() const [40]
+                0.00    0.00    1733/1733        Metallic::getSpecularCoefficient() const [41]
+                0.00    0.00    1727/1727        Metallic::getRefractionIndex() const [42]
+                0.00    0.00    1721/1721        Metallic::getDiffusionCoefficient() const [43]
+                0.00    0.00    1690/1690        Metallic::getAmbientCoefficient() const [44]
+                0.00    0.00    1678/1678        Metallic::getObjectColor() const [45]
+                               14757             stbi_write_tga_core(stbi__write_context*, int, int, int, void*) [1]
+-----------------------------------------------
+                4.01    0.00 128627109/128627109     stbi_write_tga_core(stbi__write_context*, int, int, int, void*) [1]
+[2]     70.8    4.01    0.00 128627109         Triangle::solveRoot(Ray) [2]
+-----------------------------------------------
+                0.90    0.00 130071143/130071143     stbi_write_tga_core(stbi__write_context*, int, int, int, void*) [1]
+[3]     15.9    0.90    0.00 130071143         Triangle::getSurfaceNormal(Vector&) [3]
+-----------------------------------------------
+                0.00    0.00   81720/81720       stbi_write_tga_core(stbi__write_context*, int, int, int, void*) [1]
+[24]     0.0    0.00    0.00   81720         Sphere::getSurfaceNormal(Vector&) [24]
+-----------------------------------------------
+                0.00    0.00   79207/79207       stbi_write_tga_core(stbi__write_context*, int, int, int, void*) [1]
+[25]     0.0    0.00    0.00   79207         Sphere::solveRoot(Ray) [25]
+-----------------------------------------------
+                0.00    0.00    3778/41699       stbi_write_tga_core(stbi__write_context*, int, int, int, void*) [1]
+                0.00    0.00   37921/41699       main [9]
+[26]     0.0    0.00    0.00   41699         stbiw__encode_png_line(unsigned char*, int, int, int, int, int, int, signed char*) [26]
+-----------------------------------------------
+                0.00    0.00   19325/19325       stbi_write_tga_core(stbi__write_context*, int, int, int, void*) [1]
+[27]     0.0    0.00    0.00   19325         Plane::getSurfaceNormal(Vector&) [27]
+-----------------------------------------------
+                0.00    0.00   18699/18699       stbi_write_tga_core(stbi__write_context*, int, int, int, void*) [1]
+[28]     0.0    0.00    0.00   18699         Plane::solveRoot(Ray) [28]
+-----------------------------------------------
+                0.00    0.00   16031/16031       stbi_write_tga_core(stbi__write_context*, int, int, int, void*) [1]
+[29]     0.0    0.00    0.00   16031         Triangle::getMaterial() const [29]
+-----------------------------------------------
+                0.00    0.00    9690/9690        stbi_write_tga_core(stbi__write_context*, int, int, int, void*) [1]
+[30]     0.0    0.00    0.00    9690         Glassy::getShininessCoefficient() const [30]
+-----------------------------------------------
+                0.00    0.00    9548/9548        stbi_write_tga_core(stbi__write_context*, int, int, int, void*) [1]
+[31]     0.0    0.00    0.00    9548         Glassy::getSpecularCoefficient() const [31]
+-----------------------------------------------
+                0.00    0.00    9407/9407        stbi_write_tga_core(stbi__write_context*, int, int, int, void*) [1]
+[32]     0.0    0.00    0.00    9407         Glassy::getRefractionIndex() const [32]
+-----------------------------------------------
+                0.00    0.00    9308/9308        stbi_write_tga_core(stbi__write_context*, int, int, int, void*) [1]
+[33]     0.0    0.00    0.00    9308         Glassy::getDiffusionCoefficient() const [33]
+-----------------------------------------------
+                0.00    0.00    9042/9042        stbi_write_tga_core(stbi__write_context*, int, int, int, void*) [1]
+[34]     0.0    0.00    0.00    9042         Glassy::getAmbientCoefficient() const [34]
+-----------------------------------------------
+                0.00    0.00    8876/8876        stbi_write_tga_core(stbi__write_context*, int, int, int, void*) [1]
+[35]     0.0    0.00    0.00    8876         Glassy::getObjectColor() const [35]
+-----------------------------------------------
+                0.00    0.00    1568/4704        stbiw__jpg_processDU(stbi__write_context*, int*, int*, float*, int, float*, int, unsigned short const (*) [2], unsigned short const (*) [2]) [clone .constprop.1] [46]
+                0.00    0.00    3136/4704        stbiw__jpg_processDU(stbi__write_context*, int*, int*, float*, int, float*, int, unsigned short const (*) [2], unsigned short const (*) [2]) [clone .constprop.0] [54]
+[36]     0.0    0.00    0.00    4704         stbiw__jpg_DCT(float*, float*, float*, float*, float*, float*, float*, float*) [36]
+-----------------------------------------------
+                0.00    0.00     408/2997        stbiw__jpg_processDU(stbi__write_context*, int*, int*, float*, int, float*, int, unsigned short const (*) [2], unsigned short const (*) [2]) [clone .constprop.1] [46]
+                0.00    0.00    2589/2997        stbiw__jpg_processDU(stbi__write_context*, int*, int*, float*, int, float*, int, unsigned short const (*) [2], unsigned short const (*) [2]) [clone .constprop.0] [54]
+[37]     0.0    0.00    0.00    2997         stbi__stdio_write(void*, void*, int) [37]
+-----------------------------------------------
+                0.00    0.00    2652/2652        stbi_write_tga_core(stbi__write_context*, int, int, int, void*) [1]
+[38]     0.0    0.00    0.00    2652         Plane::getMaterial() const [38]
+-----------------------------------------------
+                0.00    0.00    1969/1969        stbi_write_tga_core(stbi__write_context*, int, int, int, void*) [1]
+[39]     0.0    0.00    0.00    1969         Sphere::getMaterial() const [39]
+-----------------------------------------------
+                0.00    0.00    1773/1773        stbi_write_tga_core(stbi__write_context*, int, int, int, void*) [1]
+[40]     0.0    0.00    0.00    1773         Metallic::getShininessCoefficient() const [40]
+-----------------------------------------------
+                0.00    0.00    1733/1733        stbi_write_tga_core(stbi__write_context*, int, int, int, void*) [1]
+[41]     0.0    0.00    0.00    1733         Metallic::getSpecularCoefficient() const [41]
+-----------------------------------------------
+                0.00    0.00    1727/1727        stbi_write_tga_core(stbi__write_context*, int, int, int, void*) [1]
+[42]     0.0    0.00    0.00    1727         Metallic::getRefractionIndex() const [42]
+-----------------------------------------------
+                0.00    0.00    1721/1721        stbi_write_tga_core(stbi__write_context*, int, int, int, void*) [1]
+[43]     0.0    0.00    0.00    1721         Metallic::getDiffusionCoefficient() const [43]
+-----------------------------------------------
+                0.00    0.00    1690/1690        stbi_write_tga_core(stbi__write_context*, int, int, int, void*) [1]
+[44]     0.0    0.00    0.00    1690         Metallic::getAmbientCoefficient() const [44]
+-----------------------------------------------
+                0.00    0.00    1678/1678        stbi_write_tga_core(stbi__write_context*, int, int, int, void*) [1]
+[45]     0.0    0.00    0.00    1678         Metallic::getObjectColor() const [45]
+-----------------------------------------------
+                0.00    0.00      98/98          stbiw__jpg_processDU(stbi__write_context*, int*, int*, float*, int, float*, int, unsigned short const (*) [2], unsigned short const (*) [2]) [clone .constprop.0] [54]
+[46]     0.0    0.00    0.00      98         stbiw__jpg_processDU(stbi__write_context*, int*, int*, float*, int, float*, int, unsigned short const (*) [2], unsigned short const (*) [2]) [clone .constprop.1] [46]
+                0.00    0.00    1568/4704        stbiw__jpg_DCT(float*, float*, float*, float*, float*, float*, float*, float*) [36]
+                0.00    0.00     408/2997        stbi__stdio_write(void*, void*, int) [37]
+-----------------------------------------------
+                0.00    0.00      14/14          loadOBJ(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Material*) [53]
+[47]     0.0    0.00    0.00      14         void std::vector<Shape*, std::allocator<Shape*> >::_M_realloc_insert<Shape*>(__gnu_cxx::__normal_iterator<Shape**, std::vector<Shape*, std::allocator<Shape*> > >, Shape*&&) [47]
+-----------------------------------------------
+                0.00    0.00      13/13          loadOBJ(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Material*) [53]
+[48]     0.0    0.00    0.00      13         void std::vector<Vector, std::allocator<Vector> >::_M_realloc_insert<Vector>(__gnu_cxx::__normal_iterator<Vector*, std::vector<Vector, std::allocator<Vector> > >, Vector&&) [48]
+-----------------------------------------------
+                0.00    0.00       4/4           main [9]
+[49]     0.0    0.00    0.00       4         Sphere::~Sphere() [49]
+-----------------------------------------------
+                0.00    0.00       4/4           main [9]
+[50]     0.0    0.00    0.00       4         std::vector<Sphere*, std::allocator<Sphere*> >::push_back(Sphere* const&) [50]
+-----------------------------------------------
+                0.00    0.00       3/3           Screen::Screen(Vector, int, int) [56]
+[51]     0.0    0.00    0.00       3         rotate(Vector, Vector, double) [51]
+-----------------------------------------------
+                0.00    0.00       3/3           main [9]
+[52]     0.0    0.00    0.00       3         void std::vector<Sphere*, std::allocator<Sphere*> >::_M_realloc_insert<Sphere* const&>(__gnu_cxx::__normal_iterator<Sphere**, std::vector<Sphere*, std::allocator<Sphere*> > >, Sphere* const&) [52]
+-----------------------------------------------
+                0.00    0.00       1/1           main [9]
+[53]     0.0    0.00    0.00       1         loadOBJ(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Material*) [53]
+                0.00    0.00      14/14          void std::vector<Shape*, std::allocator<Shape*> >::_M_realloc_insert<Shape*>(__gnu_cxx::__normal_iterator<Shape**, std::vector<Shape*, std::allocator<Shape*> > >, Shape*&&) [47]
+                0.00    0.00      13/13          void std::vector<Vector, std::allocator<Vector> >::_M_realloc_insert<Vector>(__gnu_cxx::__normal_iterator<Vector*, std::vector<Vector, std::allocator<Vector> > >, Vector&&) [48]
+-----------------------------------------------
+                                 196             stbiw__jpg_processDU(stbi__write_context*, int*, int*, float*, int, float*, int, unsigned short const (*) [2], unsigned short const (*) [2]) [clone .constprop.0] [54]
+                0.00    0.00       1/1           Screen::writeToJPG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int) [55]
+[54]     0.0    0.00    0.00       1+196     stbiw__jpg_processDU(stbi__write_context*, int*, int*, float*, int, float*, int, unsigned short const (*) [2], unsigned short const (*) [2]) [clone .constprop.0] [54]
+                0.00    0.00    3136/4704        stbiw__jpg_DCT(float*, float*, float*, float*, float*, float*, float*, float*) [36]
+                0.00    0.00    2589/2997        stbi__stdio_write(void*, void*, int) [37]
+                0.00    0.00      98/98          stbiw__jpg_processDU(stbi__write_context*, int*, int*, float*, int, float*, int, unsigned short const (*) [2], unsigned short const (*) [2]) [clone .constprop.1] [46]
+                                 196             stbiw__jpg_processDU(stbi__write_context*, int*, int*, float*, int, float*, int, unsigned short const (*) [2], unsigned short const (*) [2]) [clone .constprop.0] [54]
+-----------------------------------------------
+                0.00    0.00       1/1           main [9]
+[55]     0.0    0.00    0.00       1         Screen::writeToJPG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int) [55]
+                0.00    0.00       1/1           stbiw__jpg_processDU(stbi__write_context*, int*, int*, float*, int, float*, int, unsigned short const (*) [2], unsigned short const (*) [2]) [clone .constprop.0] [54]
+-----------------------------------------------
+                0.00    0.00       1/1           main [9]
+[56]     0.0    0.00    0.00       1         Screen::Screen(Vector, int, int) [56]
+                0.00    0.00       3/3           rotate(Vector, Vector, double) [51]
+-----------------------------------------------
+                0.00    0.00       1/1           main [9]
+[57]     0.0    0.00    0.00       1         std::vector<Pixel, std::allocator<Pixel> >::~vector() [57]
+-----------------------------------------------
+                0.00    0.00       1/1           main [9]
+[58]     0.0    0.00    0.00       1         std::vector<Shape*, std::allocator<Shape*> >::~vector() [58]
+-----------------------------------------------
+                0.00    0.00       1/1           main [9]
+[59]     0.0    0.00    0.00       1         std::vector<Sphere*, std::allocator<Sphere*> >::~vector() [59]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2024 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+  [51] rotate(Vector, Vector, double) [25] Sphere::solveRoot(Ray) [42] Metallic::getRefractionIndex() const
+  [53] loadOBJ(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Material*) [49] Sphere::~Sphere() [44] Metallic::getAmbientCoefficient() const
+  [36] stbiw__jpg_DCT(float*, float*, float*, float*, float*, float*, float*, float*) [3] Triangle::getSurfaceNormal(Vector&) [41] Metallic::getSpecularCoefficient() const
+  [37] stbi__stdio_write(void*, void*, int) [2] Triangle::solveRoot(Ray) [43] Metallic::getDiffusionCoefficient() const
+   [1] stbi_write_tga_core(stbi__write_context*, int, int, int, void*) [38] Plane::getMaterial() const [40] Metallic::getShininessCoefficient() const
+  [54] stbiw__jpg_processDU(stbi__write_context*, int*, int*, float*, int, float*, int, unsigned short const (*) [2], unsigned short const (*) [2]) [clone .constprop.0] [35] Glassy::getObjectColor() const [29] Triangle::getMaterial() const
+  [46] stbiw__jpg_processDU(stbi__write_context*, int*, int*, float*, int, float*, int, unsigned short const (*) [2], unsigned short const (*) [2]) [clone .constprop.1] [32] Glassy::getRefractionIndex() const [57] std::vector<Pixel, std::allocator<Pixel> >::~vector()
+  [26] stbiw__encode_png_line(unsigned char*, int, int, int, int, int, int, signed char*) [34] Glassy::getAmbientCoefficient() const [48] void std::vector<Vector, std::allocator<Vector> >::_M_realloc_insert<Vector>(__gnu_cxx::__normal_iterator<Vector*, std::vector<Vector, std::allocator<Vector> > >, Vector&&)
+  [27] Plane::getSurfaceNormal(Vector&) [31] Glassy::getSpecularCoefficient() const [47] void std::vector<Shape*, std::allocator<Shape*> >::_M_realloc_insert<Shape*>(__gnu_cxx::__normal_iterator<Shape**, std::vector<Shape*, std::allocator<Shape*> > >, Shape*&&)
+  [28] Plane::solveRoot(Ray)  [33] Glassy::getDiffusionCoefficient() const [58] std::vector<Shape*, std::allocator<Shape*> >::~vector()
+  [55] Screen::writeToJPG(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int) [30] Glassy::getShininessCoefficient() const [52] void std::vector<Sphere*, std::allocator<Sphere*> >::_M_realloc_insert<Sphere* const&>(__gnu_cxx::__normal_iterator<Sphere**, std::vector<Sphere*, std::allocator<Sphere*> > >, Sphere* const&)
+  [56] Screen::Screen(Vector, int, int) [39] Sphere::getMaterial() const [50] std::vector<Sphere*, std::allocator<Sphere*> >::push_back(Sphere* const&)
+  [24] Sphere::getSurfaceNormal(Vector&) [45] Metallic::getObjectColor() const [59] std::vector<Sphere*, std::allocator<Sphere*> >::~vector()
