@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(ProceduralSoccer)
+project(SoccerBallField)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -14,6 +14,7 @@ add_library(glad STATIC
 )
 target_include_directories(glad PUBLIC
   ${CMAKE_SOURCE_DIR}/external/glad/include
+  ${CMAKE_SOURCE_DIR}/external/stb
 )
 
 # → Dear ImGui
@@ -34,14 +35,15 @@ target_include_directories(imgui PUBLIC
 target_link_libraries(imgui PUBLIC glfw)
 
 # → Your application
-add_executable(soccer_renderer main.cpp)
-target_include_directories(soccer_renderer PRIVATE
+add_executable(soccer main.cpp)
+target_include_directories(soccer PRIVATE
   ${CMAKE_SOURCE_DIR}/external/glad/include
   ${IMGUI_DIR}
   ${IMGUI_BACK}
   ${CMAKE_SOURCE_DIR}/external/glm
+  ${CMAKE_SOURCE_DIR}/external/stb
 )
-target_link_libraries(soccer_renderer PRIVATE
+target_link_libraries(soccer PRIVATE
   glad
   imgui
   glfw
