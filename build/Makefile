@@ -323,6 +323,30 @@ external/imgui/imgui_widgets.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/external/imgui/imgui_widgets.cpp.s
 .PHONY : external/imgui/imgui_widgets.cpp.s
 
+external/tinyobjloader/tiny_obj_loader.o: external/tinyobjloader/tiny_obj_loader.cc.o
+.PHONY : external/tinyobjloader/tiny_obj_loader.o
+
+# target to build an object file
+external/tinyobjloader/tiny_obj_loader.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glad.dir/build.make CMakeFiles/glad.dir/external/tinyobjloader/tiny_obj_loader.cc.o
+.PHONY : external/tinyobjloader/tiny_obj_loader.cc.o
+
+external/tinyobjloader/tiny_obj_loader.i: external/tinyobjloader/tiny_obj_loader.cc.i
+.PHONY : external/tinyobjloader/tiny_obj_loader.i
+
+# target to preprocess a source file
+external/tinyobjloader/tiny_obj_loader.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glad.dir/build.make CMakeFiles/glad.dir/external/tinyobjloader/tiny_obj_loader.cc.i
+.PHONY : external/tinyobjloader/tiny_obj_loader.cc.i
+
+external/tinyobjloader/tiny_obj_loader.s: external/tinyobjloader/tiny_obj_loader.cc.s
+.PHONY : external/tinyobjloader/tiny_obj_loader.s
+
+# target to generate assembly for a file
+external/tinyobjloader/tiny_obj_loader.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/glad.dir/build.make CMakeFiles/glad.dir/external/tinyobjloader/tiny_obj_loader.cc.s
+.PHONY : external/tinyobjloader/tiny_obj_loader.cc.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -379,6 +403,9 @@ help:
 	@echo "... external/imgui/imgui_widgets.o"
 	@echo "... external/imgui/imgui_widgets.i"
 	@echo "... external/imgui/imgui_widgets.s"
+	@echo "... external/tinyobjloader/tiny_obj_loader.o"
+	@echo "... external/tinyobjloader/tiny_obj_loader.i"
+	@echo "... external/tinyobjloader/tiny_obj_loader.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

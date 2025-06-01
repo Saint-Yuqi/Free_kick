@@ -1,2 +1,2 @@
-/usr/bin/ar qc libglad.a CMakeFiles/glad.dir/external/glad/src/glad.c.o
+/usr/bin/ar qc libglad.a CMakeFiles/glad.dir/external/glad/src/glad.c.o CMakeFiles/glad.dir/external/tinyobjloader/tiny_obj_loader.cc.o
 /usr/bin/ranlib libglad.a

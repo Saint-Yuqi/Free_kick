@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/yang/Advanced_Simulation/external/glad/include -I/Users/yang/Advanced_Simulation/external/imgui -I/Users/yang/Advanced_Simulation/external/imgui/backends -I/Users/yang/Advanced_Simulation/external/glm -I/Users/yang/Advanced_Simulation/external/stb -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks -isystem /Users/yang/anaconda3/envs/free_kick/include
+CXX_INCLUDES = -I/Users/yang/Advanced_Simulation/external/glad/include -I/Users/yang/Advanced_Simulation/external/imgui -I/Users/yang/Advanced_Simulation/external/imgui/backends -I/Users/yang/Advanced_Simulation/external/glm -I/Users/yang/Advanced_Simulation/external/stb -I/Users/yang/Advanced_Simulation/external/tinygltf -I/Users/yang/Advanced_Simulation/external/tinyobjloader -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks -isystem /Users/yang/anaconda3/envs/free_kick/include
 
 CXX_FLAGSarm64 = -std=gnu++11 -arch arm64
 

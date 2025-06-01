@@ -11,10 +11,12 @@ find_package(glfw3 3.3 REQUIRED)
 # → Glad
 add_library(glad STATIC
   ${CMAKE_SOURCE_DIR}/external/glad/src/glad.c
+  ${CMAKE_SOURCE_DIR}/external/tinyobjloader/tiny_obj_loader.cc
 )
 target_include_directories(glad PUBLIC
   ${CMAKE_SOURCE_DIR}/external/glad/include
   ${CMAKE_SOURCE_DIR}/external/stb
+  ${CMAKE_SOURCE_DIR}/external/tinyobjloader
 )
 
 # → Dear ImGui
@@ -42,6 +44,7 @@ target_include_directories(soccer PRIVATE
   ${IMGUI_BACK}
   ${CMAKE_SOURCE_DIR}/external/glm
   ${CMAKE_SOURCE_DIR}/external/stb
+  ${CMAKE_SOURCE_DIR}/external/tinygltf
 )
 target_link_libraries(soccer PRIVATE
   glad

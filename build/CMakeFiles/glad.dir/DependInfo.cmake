@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/yang/Advanced_Simulation/external/glad/src/glad.c" "CMakeFiles/glad.dir/external/glad/src/glad.c.o" "gcc" "CMakeFiles/glad.dir/external/glad/src/glad.c.o.d"
+  "/Users/yang/Advanced_Simulation/external/tinyobjloader/tiny_obj_loader.cc" "CMakeFiles/glad.dir/external/tinyobjloader/tiny_obj_loader.cc.o" "gcc" "CMakeFiles/glad.dir/external/tinyobjloader/tiny_obj_loader.cc.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

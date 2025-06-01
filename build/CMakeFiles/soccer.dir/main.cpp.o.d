@@ -1099,4 +1099,11 @@ CMakeFiles/soccer.dir/main.cpp.o: \
   /Users/yang/Advanced_Simulation/external/glm/glm/gtc/../mat4x2.hpp \
   /Users/yang/Advanced_Simulation/external/glm/glm/gtc/../mat4x3.hpp \
   /Users/yang/Advanced_Simulation/external/glm/glm/gtc/type_ptr.inl \
-  /Users/yang/Advanced_Simulation/external/stb/stb_image.h
+  /Users/yang/Advanced_Simulation/external/stb/stb_image.h \
+  /Users/yang/Advanced_Simulation/external/tinyobjloader/tiny_obj_loader.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/map \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/fstream \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/filesystem \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/set \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/sstream

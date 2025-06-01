@@ -86,17 +86,33 @@ CMakeFiles/glad.dir/external/glad/src/glad.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/glad.dir/external/glad/src/glad.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/yang/Advanced_Simulation/external/glad/src/glad.c -o CMakeFiles/glad.dir/external/glad/src/glad.c.s
 
+CMakeFiles/glad.dir/external/tinyobjloader/tiny_obj_loader.cc.o: CMakeFiles/glad.dir/flags.make
+CMakeFiles/glad.dir/external/tinyobjloader/tiny_obj_loader.cc.o: /Users/yang/Advanced_Simulation/external/tinyobjloader/tiny_obj_loader.cc
+CMakeFiles/glad.dir/external/tinyobjloader/tiny_obj_loader.cc.o: CMakeFiles/glad.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/yang/Advanced_Simulation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/glad.dir/external/tinyobjloader/tiny_obj_loader.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/glad.dir/external/tinyobjloader/tiny_obj_loader.cc.o -MF CMakeFiles/glad.dir/external/tinyobjloader/tiny_obj_loader.cc.o.d -o CMakeFiles/glad.dir/external/tinyobjloader/tiny_obj_loader.cc.o -c /Users/yang/Advanced_Simulation/external/tinyobjloader/tiny_obj_loader.cc
+
+CMakeFiles/glad.dir/external/tinyobjloader/tiny_obj_loader.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/glad.dir/external/tinyobjloader/tiny_obj_loader.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yang/Advanced_Simulation/external/tinyobjloader/tiny_obj_loader.cc > CMakeFiles/glad.dir/external/tinyobjloader/tiny_obj_loader.cc.i
+
+CMakeFiles/glad.dir/external/tinyobjloader/tiny_obj_loader.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/glad.dir/external/tinyobjloader/tiny_obj_loader.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yang/Advanced_Simulation/external/tinyobjloader/tiny_obj_loader.cc -o CMakeFiles/glad.dir/external/tinyobjloader/tiny_obj_loader.cc.s
+
 # Object files for target glad
 glad_OBJECTS = \
-"CMakeFiles/glad.dir/external/glad/src/glad.c.o"
+"CMakeFiles/glad.dir/external/glad/src/glad.c.o" \
+"CMakeFiles/glad.dir/external/tinyobjloader/tiny_obj_loader.cc.o"
 
 # External object files for target glad
 glad_EXTERNAL_OBJECTS =
 
 libglad.a: CMakeFiles/glad.dir/external/glad/src/glad.c.o
+libglad.a: CMakeFiles/glad.dir/external/tinyobjloader/tiny_obj_loader.cc.o
 libglad.a: CMakeFiles/glad.dir/build.make
 libglad.a: CMakeFiles/glad.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/yang/Advanced_Simulation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libglad.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/yang/Advanced_Simulation/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libglad.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/glad.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/glad.dir/link.txt --verbose=$(VERBOSE)
 
