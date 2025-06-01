@@ -410,6 +410,8 @@ GLuint ballDiff,  ballNorm,  ballRgh;
 GLuint goalDiff,  goalNorm,  goalRgh;
 GLuint wallDiff,  wallNorm,  wallRgh;
 
+float g_spinAngle = 0.0f;
+
 bool loadCSV(const std::string& csvPath)
 {
     std::ifstream ifs(csvPath);
@@ -641,7 +643,7 @@ int main()
         double now = glfwGetTime();
         float dt   = float(now - lastTime);
         lastTime   = now;
-
+        g_spinAngle += dt * glm::radians(120.0f);
         glfwPollEvents();
 
         // ---------------------------
@@ -652,7 +654,6 @@ int main()
         {
             timeAccum = 0.0f;
             g_currentFrame++;
-            // 不循环：到最后一帧就停住
             if(g_currentFrame >= (int)g_ballFrames.size())
                 g_currentFrame = (int)g_ballFrames.size()-1;
         }
@@ -792,30 +793,26 @@ int main()
         {
             glUniform1i(uObj, 1); // ball
             glm::vec3 bSize = g_ballBox.vmax - g_ballBox.vmin;
-            float sx= (bSize.x > 1e-5f) ? (ballLine.width  / bSize.x) * 0.8f : 1.f;
-            float sy= (bSize.y > 1e-5f) ? (ballLine.height / bSize.y) * 0.8f: 1.f;
-            float sz= sx; // keep sphere scale
-
-            float yOffset = 0.24f; // offset so it doesn't sink below plane
-
-            glm::mat4 mBall(1.f);
-            mBall = glm::translate(mBall, 
-                      glm::vec3(ballLine.x, ballLine.y + yOffset, ballLine.z));
-
-            // orientation (Rodrigues style or standard rotate)
-            glm::vec3 axis    = glm::normalize(glm::vec3(0,1,0));
-            float angleRad    = glm::radians(ballLine.oriY); 
-            glm::mat4 rot     = glm::rotate(glm::mat4(1.f), angleRad, axis);
-            mBall = mBall * rot;
-
-            // scale
+            float sx= (bSize.x > 1e-5f) ? (ballLine.width  / bSize.x) * 0.5f : 1.f;
+            float sy= (bSize.y > 1e-5f) ? (ballLine.height / bSize.y) * 0.5f : 1.f;
+            float sz= sx;
+        
+            float yOffset = 0.24f;
+        
+            glm::mat4 mBall = glm::mat4(1.0f);
+        
+            mBall = glm::translate(mBall, glm::vec3(ballLine.x, ballLine.y + yOffset, ballLine.z));
+        
+            float angleRad = g_spinAngle;
+            mBall = glm::rotate(mBall, angleRad, glm::vec3(0,1,0));
+        
             mBall = glm::scale(mBall, glm::vec3(sx, sy, sz));
-
-            glUniformMatrix4fv(uM,1,GL_FALSE, glm::value_ptr(mBall));
+        
+            glUniformMatrix4fv(uM, 1, GL_FALSE, glm::value_ptr(mBall));
             glBindVertexArray(g_ballMesh.vao);
             glDrawElements(GL_TRIANGLES, g_ballMesh.indexCount, GL_UNSIGNED_INT, 0);
         }
-
+        
         // --------------------------
         // draw goal
         // --------------------------
@@ -826,8 +823,8 @@ int main()
             float oh= gSize.y;
 
             // *1.5f 
-            float sx= (ow>1e-5f)? (g_goalData.width / ow) * 1.5f : 1.5f;
-            float sy= (oh>1e-5f)? (g_goalData.height/oh) * 1.5f : 1.5f;
+            float sx= (ow>1e-5f)? (g_goalData.width / ow) * 2.0f : 1.5f;
+            float sy= (oh>1e-5f)? (g_goalData.height/oh) * 2.0f : 1.5f;
             float sz= sx;
 
             glm::mat4 mGoal(1.f);
