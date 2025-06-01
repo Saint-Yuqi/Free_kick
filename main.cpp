@@ -452,6 +452,7 @@ bool loadCSV(const std::string& csvPath)
             g_wallData= row;
         }
         else if(row.objectType=="goal"){
+            //row.oriY = 180.f; // goal is rotated 180 degrees
             g_goalData= row;
         }
     }
@@ -622,14 +623,19 @@ int main()
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
     // load wavepoints CSV
-    if(!loadCSV("output/wavepoints_1.csv")){
-        std::cerr << "Check wavepoints_1.csv\n";
+    if(!loadCSV("output/wavepoints_125.csv")){
+        std::cerr << "Check wavepoints_125.csv\n";
     }
     // If no ball frames found, add a default
     if(g_ballFrames.empty()){
         g_ballFrames.push_back({0,0,0,"ball",1,1,0,0,0});
     }
-
+    // if (g_goalData.objectType == "goal") {
+    //     g_goalData.oriY = 180.0f;
+    // }
+    // if (g_wallData.objectType == "wall") {
+    //     g_wallData.oriY = 180.0f;
+    // }
     // g_goalData.z    = -30.0f;
     // g_goalData.oriY = 180.0f;
 
@@ -644,6 +650,7 @@ int main()
         float dt   = float(now - lastTime);
         lastTime   = now;
         g_spinAngle += dt * glm::radians(120.0f);
+        //135 g_spinAngle -= dt * glm::radians(120.0f);
         glfwPollEvents();
 
         // ---------------------------
@@ -700,8 +707,8 @@ int main()
         else
         {
             // fixed vantage
-            camPos = glm::vec3(5.0f, 8.0f, -40.0f);
-            lookTarget = glm::vec3(0, 0, 0);
+            camPos = glm::vec3(10.0f, 25.0f, 80.0f);
+            lookTarget = glm::vec3(10.0f, 0.0f, 45.0f);
         }
 
         glm::mat4 view = glm::lookAt(camPos, lookTarget, glm::vec3(0,1,0));
@@ -778,7 +785,7 @@ int main()
 
                 glm::mat4 mWall(1.f);
                 mWall = glm::translate(mWall, pos);
-                mWall = glm::rotate(mWall, yawRad, glm::vec3(0,1,0));
+                mWall = glm::rotate(mWall, yawRad+ glm::radians(180.0f), glm::vec3(0,1,0));
                 mWall = glm::scale(mWall, glm::vec3(scaleX, scaleY, scaleZ));
 
                 glUniformMatrix4fv(uM,1,GL_FALSE, glm::value_ptr(mWall));
@@ -786,6 +793,51 @@ int main()
                 glDrawElements(GL_TRIANGLES, g_wallMesh.indexCount, GL_UNSIGNED_INT, nullptr);
             }
         }
+        // --------------------------
+        // draw wall
+        // --------------------------
+        // --------------------------
+        // draw wall
+        // --------------------------
+        // glUniform1i(uObj, 3); // wall
+        // {
+        //     glm::vec3 boxSize = g_wallBox.vmax - g_wallBox.vmin;
+        //     float objWidth  = boxSize.x;
+        //     float objHeight = boxSize.y;
+        
+        //     float scaleX = (objWidth  > 1e-5f) ? (g_wallData.width  / objWidth)  : 1.f;
+        //     float scaleY = (objHeight > 1e-5f) ? (g_wallData.height / objHeight) : 1.f;
+        //     float scaleZ = scaleX;
+        
+        //     float yawRad = glm::radians(g_wallData.oriY);
+        //     glm::vec3 forward = glm::vec3(cos(yawRad), 0.f, -sin(yawRad));
+            
+        //     // ✅ 关键：反转 lateral，让人左右排（别“远近”排）
+        //     glm::vec3 lateral = -glm::normalize(glm::cross(forward, glm::vec3(0, 1, 0)));
+        
+        //     glm::vec3 center = glm::vec3(g_wallData.x, g_wallData.y, g_wallData.z);
+        
+        //     const int wallCount = 4;
+        //     float spacing = g_wallData.width / (float)wallCount;
+        
+        //     for (int i = 0; i < wallCount; ++i)
+        //     {
+        //         float local = (i + 0.5f) * spacing - g_wallData.width * 0.5f;
+        //         glm::vec3 pos = center + lateral * local;
+        
+        //         glm::mat4 mWall(1.f);
+        //         mWall = glm::translate(mWall, pos);
+        //         mWall = glm::rotate(mWall, yawRad, glm::vec3(0, 1, 0));
+        //         mWall = glm::scale(mWall, glm::vec3(scaleX, scaleY, scaleZ));
+        
+        //         glUniformMatrix4fv(uM, 1, GL_FALSE, glm::value_ptr(mWall));
+        //         glBindVertexArray(g_wallMesh.vao);
+        //         glDrawElements(GL_TRIANGLES, g_wallMesh.indexCount, GL_UNSIGNED_INT, nullptr);
+        //     }
+        // }
+        
+        
+
 
         // --------------------------
         // draw ball
@@ -816,32 +868,69 @@ int main()
         // --------------------------
         // draw goal
         // --------------------------
-        glUniform1i(uObj, 2); // goal
+        // glUniform1i(uObj, 2); // goal
+        // {
+        //     glm::vec3 gSize = g_goalBox.vmax - g_goalBox.vmin;
+        //     float ow= gSize.x;
+        //     float oh= gSize.y;
+
+        //     // *1.5f 
+        //     float sx= (ow>1e-5f)? (g_goalData.width / ow) * 2.0f : 1.5f;
+        //     float sy= (oh>1e-5f)? (g_goalData.height/oh) * 2.0f : 1.5f;
+        //     float sz= sx;
+
+        //     glm::mat4 mGoal(1.f);
+        //     float footOffsetY= -(g_goalBox.vmin.y)* sy;
+        //     mGoal= glm::translate(mGoal, 
+        //              glm::vec3(g_goalData.x, g_goalData.y + footOffsetY, g_goalData.z));
+
+        //     // orientation
+        //     //float yaw= glm::radians(g_goalData.oriY);
+        //     float yawDeg = g_goalData.oriY
+        //     mGoal = glm::rotate(mGoal, glm::radians(180.0f), glm::vec3(0,1,0)); 
+
+
+        //     mGoal= glm::scale(mGoal, glm::vec3(sx, sy, sz));
+
+        //     glUniformMatrix4fv(uM,1,GL_FALSE, glm::value_ptr(mGoal));
+        //     glBindVertexArray(g_goalMesh.vao);
+        //     glDrawElements(GL_TRIANGLES, g_goalMesh.indexCount, GL_UNSIGNED_INT, 0);
+        // }
+        // --------------------------
+        // draw goal
+        // --------------------------
+        glUniform1i(uObj, 2);       // goal
         {
             glm::vec3 gSize = g_goalBox.vmax - g_goalBox.vmin;
-            float ow= gSize.x;
-            float oh= gSize.y;
 
-            // *1.5f 
-            float sx= (ow>1e-5f)? (g_goalData.width / ow) * 2.0f : 1.5f;
-            float sy= (oh>1e-5f)? (g_goalData.height/oh) * 2.0f : 1.5f;
-            float sz= sx;
+            float sx = (gSize.x > 1e-5f) ? (g_goalData.width  / gSize.x) * 2.0f : 1.5f;
+            float sy = (gSize.y > 1e-5f) ? (g_goalData.height / gSize.y) * 2.0f : 1.5f;
+            float sz = sx;
 
-            glm::mat4 mGoal(1.f);
-            float footOffsetY= -(g_goalBox.vmin.y)* sy;
-            mGoal= glm::translate(mGoal, 
-                     glm::vec3(g_goalData.x, g_goalData.y + footOffsetY, g_goalData.z));
+            float footOffsetY = -(g_goalBox.vmin.y) * sy;      // 让“脚”贴地
 
-            // orientation
-            float yaw= glm::radians(g_goalData.oriY);
-            mGoal= glm::rotate(mGoal, glm::radians(180.0f), glm::vec3(0,1,0));
+            // ──► 旋转角度：直接用 CSV 里读到的 oriY（需要的话加一个常量微调）
+            float yawDeg = g_goalData.oriY;                    // 例：模型正面朝 +Z 时写 0°
+            // 如果模型导出时正面是 -Z，就写 180°；正面是 +X，就写 -90°/90° 依此类推
+            // float yawDeg = g_goalData.oriY + 180.0f;        // ←如果你确定要再翻 180° 就取消注释
 
-            mGoal= glm::scale(mGoal, glm::vec3(sx, sy, sz));
+            // ① S ② R ③ T  —— 最典型的 TRS 顺序（世界乘以 SR）
+            glm::mat4 mGoal =
+                glm::translate(glm::mat4(1.0f),
+                                glm::vec3(g_goalData.x,
+                                        g_goalData.y + footOffsetY,
+                                        g_goalData.z)) *
+                glm::rotate(glm::mat4(1.0f),
+                            glm::radians(yawDeg),
+                            glm::vec3(0.0f, 1.0f, 0.0f)) *
+                glm::scale(glm::mat4(1.0f),
+                            glm::vec3(sx, sy, sz));
 
-            glUniformMatrix4fv(uM,1,GL_FALSE, glm::value_ptr(mGoal));
+            glUniformMatrix4fv(uM, 1, GL_FALSE, glm::value_ptr(mGoal));
             glBindVertexArray(g_goalMesh.vao);
-            glDrawElements(GL_TRIANGLES, g_goalMesh.indexCount, GL_UNSIGNED_INT, 0);
-        }
+            glDrawElements(GL_TRIANGLES, g_goalMesh.indexCount, GL_UNSIGNED_INT, nullptr);
+}
+
 
         // render ImGui
         ImGui::Render();
